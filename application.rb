@@ -10,6 +10,8 @@ require 'sinatra/jbuilder'
 
 class Application < Sinatra::Base
   use Rack::JSONBodyParser
+  use ApplicationLogger
+  helpers ApplicationLogger::Helper
   set :show_exceptions, false
 
   get '/' do
